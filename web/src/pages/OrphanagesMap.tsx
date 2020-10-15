@@ -16,7 +16,7 @@ interface Orphanage {
     name: string
 }
 function Orphanages() {
-    const [orpanages, setOrphanages] = useState<Orphanage[]>([])
+    const [orphanages, setOrphanages] = useState<Orphanage[]>([])
     useEffect(() => {
         api.get('/orphanages').then(response => {
             setOrphanages(response.data);
@@ -47,7 +47,7 @@ function Orphanages() {
                 {/*<TileLayer
                     url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tile/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
                 />*/}
-                {orpanages.map(orphanage => {
+                {orphanages.map(orphanage => {
                     return (
                         <Marker
                             key={orphanage.id}
